@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body {
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        font-family: sans-serif;
+        position: relative;
+    }
+
+    .button-container {
+        width: 500px;
+        height: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: white;
+        text-shadow: black;
+        transform: translate( -50% , -50% );
+    }
+
+    .button {
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 100px;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        color: white;
+        text-shadow: black;
+        border-radius: 50px;
+        border-style: solid;
+        transition: all;
+        transition: 0.5s;
+        box-shadow: black;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .button::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        transform: skew( 20deg );
+        z-index: -1;
+        left: -110%;
+        background-color: red;
+        transition: 0.5s;
+    }
+
+    .button:hover::before {
+        left: -49%;
+    }
+
+    .button::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        transform: skew( 20deg );
+        z-index: -1;
+        right: -110%;
+        background-color: teal;
+        transition: 0.5s;
+    }
+
+    .button:hover::after {
+        right: -50%;
+    }
+
+</style>
+
+<body>
+    
+    <div class="button-container">
+        <div class="button">
+            "RIP VIRGIL"
+        </div>
+    </div>
+
+</body>
+
+</html>
